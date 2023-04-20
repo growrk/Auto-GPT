@@ -19,7 +19,26 @@
     "vscode": {
       // Set *default* container specific settings.json values on container create.
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python"
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "workbench.iconTheme": "vscode-icons",
+        "editor.inlineSuggest.enabled": true,
+        "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
+        "editor.codeActionsOnSave": {
+          "source.fixAll": true
+        },
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.renderWhitespace": "all",
+        "window.zoomLevel": 1,
+        "[python]": {
+          "editor.formatOnType": true
+        },
+        "git.autofetch": true,
+        "editor.lineNumbers": "interval",
+        "workbench.sideBar.location": "right",
+        "explorer.autoReveal": false,
+        "workbench.action.toggleSidebarVisibility": "ctrl+b"
       },
       "extensions": [
         "streetsidesoftware.code-spell-checker",
@@ -29,7 +48,8 @@
     },
     "codespaces": {
       "openFiles": [
-        "docs/gkr.md"
+        "README.md",
+        "docs/grk.md"
       ]
     }
   },
@@ -44,6 +64,8 @@
 
   // Environment variables to set.
   "containerEnv": {
+    "CUSTOM_SEARCH_ENGINE_ID": "${localEnv:CUSTOM_SEARCH_ENGINE_ID}",
+    "GOOGLE_API_KEY": "${localEnv:GOOGLE_API_KEY}",
     "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}"
   },
 
