@@ -20,7 +20,17 @@
       // Set *default* container specific settings.json values on container create.
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python"
-      }
+      },
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens"
+      ]
+    },
+    "codespaces": {
+      "openFiles": [
+        "docs/gkr.md"
+      ]
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -30,5 +40,13 @@
   // "postCreateCommand": "pip3 install --user -r requirements.txt",
 
   // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+
+  // Environment variables to set.
+  "containerEnv": {
+    "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}"
+  },
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "./scripts/codespacesSetup.sh"
 }
